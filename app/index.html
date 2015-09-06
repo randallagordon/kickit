@@ -1,0 +1,12 @@
+<!doctype html>
+<head>
+  <title>Kick It!</title>
+  <link rel="stylesheet" href="styles/angular-material.css">
+</head>
+<body>
+  <script src="bundle.js"></script>
+  <div ng-app="kickit" ng-controller="KickitController as kickitVM">
+    <shoe-collection shoes="kickitVM.shoes"></shoe-collection>
+  </div>
+</body>
+</html>

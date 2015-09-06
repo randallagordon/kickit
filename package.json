@@ -1,0 +1,73 @@
+{
+  "name": "kickit",
+  "version": "1.0.0",
+  "description": "Kick It!",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && opener dist/index.html",
+    "test": "karma start --single-run",
+    "clean": "rm -r ./dist ./coverage || true",
+    "browserify": "browserify app/index.js -o dist/bundle.js",
+    "browserify-dev": "browserify app/index.js -o dist/bundle.js -d",
+    "watchify": "npm run build && watchify app/index.js -o dist/bundle.js -d",
+    "copy-files": "cp app/index.html dist/index.html && cp node_modules/angular-material/angular-material.css dist/styles/angular-material.css",
+    "make-dist": "mkdir -p dist/styles",
+    "build": "npm run make-dist && npm run browserify && npm run copy-files",
+    "build-dev": "npm run make-dist && npm run browserify-dev && npm run copy-files",
+    "browsersync": "browser-sync start --server dist --files 'dist/**/*.*'",
+    "watch": "nodemon -e html,sass,json,js --ignore \"dist/**/*\" --ignore \"node_modules\" --exec \"npm run build-dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/randallagordon/kickit/"
+  },
+  "author": "Randall A. Gordon",
+  "license": "MIT",
+  "devDependencies": {
+    "angular-mocks": "^1.4.5",
+    "babelify": "^6.3.0",
+    "browser-sync": "^2.9.1",
+    "browserify": "^11.0.1",
+    "browserify-babel-istanbul": "^0.2.3",
+    "chai": "^3.2.0",
+    "insert-css": "^0.2.0",
+    "karma": "^0.13.9",
+    "karma-browserify": "^4.3.0",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-cli": "0.1.0",
+    "karma-coverage": "^0.5.1",
+    "karma-mocha": "^0.2.0",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-threshold-reporter": "^0.1.15",
+    "mocha": "^2.3.0",
+    "mockfirebase": "^0.11.0",
+    "nodemon": "^1.4.1",
+    "opener": "^1.4.1",
+    "partialify": "^3.1.5",
+    "sinon": "^1.16.1",
+    "standard": "^5.2.1",
+    "watchify": "^3.4.0"
+  },
+  "dependencies": {
+    "angular": "^1.4.5",
+    "angular-material": "^0.10.1",
+    "angularfire": "^1.1.2",
+    "firebase": "^2.2.9"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "partialify",
+      "sassify"
+    ]
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "global": [
+      "describe",
+      "beforeEach",
+      "afterEach",
+      "it"
+    ]
+  }
+}
