@@ -1,9 +1,6 @@
-'use strict'
-
 import angular from 'angular'
 import 'angular-mocks'
 import { expect } from 'chai'
-import sinon from 'sinon'
 import { MockFirebase } from 'mockfirebase'
 
 import kickitServices from '..'
@@ -18,7 +15,7 @@ describe('ShoeService', function () {
       $window.Firebase = MockFirebase
     })
 
-    angular.mock.inject(function ($window, _ShoesService_) {
+    angular.mock.inject(function (_ShoesService_) {
       ctx.ShoesService = _ShoesService_
     })
   })
