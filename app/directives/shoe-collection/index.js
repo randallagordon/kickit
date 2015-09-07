@@ -1,9 +1,5 @@
 import ShoeCollectionController from './controller'
 
-import styles from './styles.sass'
-import insertCss from 'insert-css'
-insertCss(styles)
-
 import template from './template.html'
 
 export default function () {

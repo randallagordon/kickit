@@ -1,12 +1,13 @@
 <!doctype html>
 <head>
   <title>Kick It!</title>
-  <link rel="stylesheet" href="styles/angular-material.css">
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+  <link rel="stylesheet" href="bundle.css">
 </head>
 <body>
-  <script src="bundle.js"></script>
   <div ng-app="kickit" ng-controller="KickitController as kickitVM">
     <shoe-collection shoes="kickitVM.shoes"></shoe-collection>
   </div>
+  <script src="bundle.js"></script>
 </body>
 </html>
