@@ -19,7 +19,8 @@
     "build-dev": "npm run make-dist && npm run browserify-dev && npm run sass-dev && npm run copy-files",
     "watch": "npm run watchify & npm run watch-sass",
     "watch-build-dev": "nodemon -e html,sass,scss,json,js --ignore \"dist/**/*\" --ignore \"node_modules\" --exec \"npm run build-dev\"",
-    "browsersync": "browser-sync start --server dist --files 'dist/**/*.*'"
+    "browsersync-coverage": "browser-sync start --port 1337 --startPath 'report-html' --server coverage --files 'coverage/**/*.*'",
+    "browsersync-dist": "browser-sync start --server dist --files 'dist/**/*.*'"
   },
   "repository": {
     "type": "git",
@@ -33,7 +34,7 @@
     "babelify": "^6.3.0",
     "browser-sync": "^2.9.1",
     "browserify": "^11.0.1",
-    "browserify-babel-istanbul": "^0.2.3",
+    "browserify-istanbul": "^0.2.1",
     "chai": "^3.2.0",
     "karma": "^0.13.9",
     "karma-browserify": "^4.3.0",

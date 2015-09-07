@@ -1,11 +1,7 @@
-import angular from 'angular'
-
-import services from '../services'
-
-import KickitController from './kickit'
+const angular = require('angular')
 
 export default angular.module('kickit.controllers', [
-    services
+    require('../services')
   ])
-  .controller('KickitController', KickitController)
+  .controller('KickitController', require('./kickit'))
   .name

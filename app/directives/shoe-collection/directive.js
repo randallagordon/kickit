@@ -1,4 +1,4 @@
-import template from './template.html'
+const template = require('./template.html')
 
 export default function shoeCollection () {
   return {

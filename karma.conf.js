@@ -1,12 +1,12 @@
-'use strict'
-
 module.exports = function (config) {
   config.set({
     frameworks: ['browserify', 'mocha'],
     files: [
+      'app/index.js',
       'app/**/*.spec.js'
     ],
     preprocessors: {
+      'app/index.js': 'browserify',
       'app/**/*.spec.js': 'browserify'
     },
     browserify: {
@@ -14,7 +14,7 @@ module.exports = function (config) {
       transform: [
         'babelify',
         'partialify',
-        ['browserify-babel-istanbul', {
+        ['browserify-istanbul', {
           ignore: ['**/node_modules/**', '**/*.spec.js']
         }]
       ]
@@ -35,10 +35,10 @@ module.exports = function (config) {
       ]
     },
     thresholdReporter: {
-      statements: 0,
-      branches: 0,
-      functions: 0,
-      lines: 0
+      statements: 100,
+      branches: 100,
+      functions: 100,
+      lines: 100
     }
   })
 }

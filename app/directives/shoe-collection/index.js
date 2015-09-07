@@ -1,8 +1,5 @@
-import shoeCollection from './directive'
-import ShoeCollectionController from './controller'
-
 export default angular.module('kickit.directives.shoeCollection', [
   ])
-  .directive('shoeCollection', shoeCollection)
-  .controller('ShoeCollectionController', ShoeCollectionController)
+  .directive('shoeCollection', require('./directive'))
+  .controller('ShoeCollectionController', require('./controller'))
   .name

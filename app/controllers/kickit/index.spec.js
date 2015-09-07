@@ -4,22 +4,18 @@ import { expect } from 'chai'
 import 'angular-mocks'
 import { MockFirebase } from 'mockfirebase'
 
-const shoeFixture = require(`../../../test/fixtures/shoe`)
+import kickitControllers from '..'
 
-import kickitDirectives from '..'
-
-describe('ShoeCollectionController', function () {
+describe('KickitController', function () {
   const ctx = this
 
   beforeEach(() => {
-    angular.mock.module(kickitDirectives)
+    angular.mock.module(kickitControllers)
 
     angular.mock.inject(function($controller, $rootScope) {
       ctx.scope = $rootScope.$new()
 
-      ctx.scope.shoe = shoeFixture
-
-      ctx.controller = $controller('ShoeCollectionController', {
+      ctx.controller = $controller('KickitController', {
         $scope: ctx.scope,
       })
 

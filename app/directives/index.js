@@ -1,10 +1,7 @@
-import angular from 'angular'
-
-import shoeCollection from './shoe-collection'
-import shoe from './shoe'
+const angular = require('angular')
 
 export default angular.module('kickit.directives', [
-    shoeCollection,
-    shoe
+    require('./shoe-collection'),
+    require('./shoe')
   ])
   .name

@@ -1,11 +1,7 @@
-import angular from 'angular'
-
-import services from './services'
-import directives from './directives'
-import controllers from './controllers'
+const angular = require('angular')
 
 export default angular.module('kickit', [
-    services,
-    directives,
-    controllers
+    require('./services'),
+    require('./directives'),
+    require('./controllers')
   ])
