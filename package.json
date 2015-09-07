@@ -17,7 +17,8 @@
     "make-dist": "mkdir -p dist/styles",
     "build": "npm run make-dist && npm run browserify && npm run sass && npm run copy-files",
     "build-dev": "npm run make-dist && npm run browserify-dev && npm run sass-dev && npm run copy-files",
-    "watch": "nodemon -e html,sass,json,js --ignore \"dist/**/*\" --ignore \"node_modules\" --exec \"npm run build-dev\"",
+    "watch": "npm run watchify & npm run watch-sass",
+    "watch-build-dev": "nodemon -e html,sass,scss,json,js --ignore \"dist/**/*\" --ignore \"node_modules\" --exec \"npm run build-dev\"",
     "browsersync": "browser-sync start --server dist --files 'dist/**/*.*'"
   },
   "repository": {
